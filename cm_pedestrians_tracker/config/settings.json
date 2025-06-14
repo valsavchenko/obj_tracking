@@ -1,0 +1,7 @@
+{
+  "detector": {
+    "weights_file_path": "cm_pedestrians_tracker/config/yolo11x.trt"
+  },
+  "tracker": {
+  }
+}
