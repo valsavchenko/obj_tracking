@@ -1,4 +1,5 @@
 import numpy as np
+import pycuda.autoinit  # noqa
 import pycuda.driver as cuda
 import tensorrt as trt
 
@@ -34,6 +35,8 @@ class Detector(_ped_trk.timer.Timeable):
         Sets up a model to infer with
         """
         super().__init__(logger=logger)
+
+        cuda.init()
 
         log = _Logger(logger=logger)
         trt.init_libnvinfer_plugins(logger=log, namespace='')
